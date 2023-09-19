@@ -1,0 +1,31 @@
+@mixin calculator-buttons($backgroundColor, $width, $height) {
+background-color: $backgroundColor;
+width: $width;
+height: $height;
+}
+
+@mixin background-components($backgroundColor){
+  background-color: $backgroundColor;
+  width: 100%;
+  padding: 10px;
+  margin: 30px;
+  border-radius: 10px;
+}
+
+@mixin background-gradientGreen{
+  background-image: radial-gradient(circle at center, black,black,black,black, rgb(30, 255, 0));
+  border: 1px solid rgb(30, 255, 0);
+}
+@mixin background-gradientRedBlack{
+  background-image: radial-gradient(circle at center, black,black,black,black, rgb(30, 255, 0));
+  border: 1px solid red;
+}
+@mixin background-gradientRed{
+  background-image: radial-gradient(circle at center, black,black,black,black, rgb(255, 0, 0));
+  border: 1px solid rgb(255, 0, 0);
+}
+@mixin background-gradientBlue{
+  background-image: radial-gradient(circle at center, black,black,black,black, rgb(0, 89, 255));
+  border: 1px solid rgb(0, 89, 255);
+}
+
