@@ -38,7 +38,7 @@
     display: flex;
     color: rgb(255, 255, 255);
     opacity: 0.9;
-    font-size: 2rem;
+    font-size: 1rem;
     justify-content: space-evenly;
     span{
     font-size: 3rem;
@@ -64,4 +64,27 @@
     margin: -80px 0px;
     z-index: -2;
   }
+}
+
+
+
+
+.playersBox-aditional{
+  &-poison{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    color: rgb(68, 255, 68);
+    gap: 10px;
+    margin-left: 20px;  
+    margin-top:40px;
+  }
+}
+
+.player-dead{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  font-size: 10rem;
 }
