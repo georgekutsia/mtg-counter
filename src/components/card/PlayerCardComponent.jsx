@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 
 function PlayerCardComponent({playerName, playerColor, playerClass}) {
   const [rotationAngle, setRotationAngle] = useState(0);
+
+  const [count, setcount] = useState(40)
   
   const rotateImage = () => {
     setRotationAngle(rotationAngle + 90);
@@ -18,15 +20,15 @@ function PlayerCardComponent({playerName, playerColor, playerClass}) {
         </div>
         <div className='playersBox-counter'>
             <div className='playersBox-counter-add'>
-                    <i className="fa-solid fa-plus"><span>1</span></i>
-                    <i className="fa-solid fa-plus"><span>5</span></i>
+                    <i onClick={()=>setcount(count + 1)} className="fa-solid fa-plus"><span>1</span></i>
+                    <i onClick={()=>setcount(count + 5)} className="fa-solid fa-plus"><span>5</span></i>
             </div>
             <div className='playersBox-counter-center'>
-                <p>4</p>
+                <p>{count}</p>
             </div>
             <div className='playersBox-counter-add'>
-                    <i className="fa-solid fa-minus"><span>1</span></i>
-                    <i className="fa-solid fa-minus"><span>5</span></i>
+                    <i onClick={()=>setcount(count - 1)}  className="fa-solid fa-minus"><span>1</span></i>
+                    <i onClick={()=>setcount(count - 5)}  className="fa-solid fa-minus"><span>5</span></i>
             </div>
         </div>
         <div>

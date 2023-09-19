@@ -125,21 +125,23 @@ a {
 
 .playersBox-counter-add {
   display: flex;
-  color: rgb(81, 81, 81);
+  color: rgb(255, 255, 255);
+  opacity: 0.9;
   font-size: 2rem;
   justify-content: space-evenly;
 }
 .playersBox-counter-add span {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 .playersBox-counter-add i {
+  opacity: 0.2;
   text-align: center;
   width: 100%;
-  background-color: red;
-  transition: background-color 1s;
+  padding: 20px 0px;
+  transition: 1s ease-in-out;
 }
 .playersBox-counter-add i:hover {
-  background-color: blue;
+  opacity: 0.6;
   transition: none;
 }
 .playersBox-counter-center {
@@ -147,5 +149,6 @@ a {
   justify-content: center;
   color: white;
   font-size: 6rem;
-  margin: -40px 0px;
+  margin: -80px 0px;
+  z-index: -2;
 }/*# sourceMappingURL=main.css.map */
