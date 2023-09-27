@@ -1,40 +1,65 @@
 .navbarBox {
   position: absolute;
   display: flex;
-  background-color: blue;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 50%;
-  width: 5rem;
-  height: 5rem;
   align-items: center;
   justify-content: center; 
-  margin: auto;
+  overflow: hidden;
+  width: 100%;
+  height: 240px;
   .fa-hands-asl-interpreting {
     color: white;
+    display: flex;
+    justify-content: center;
     font-size: 2rem;
   }
   .dice20 {
     color: white;
     font-size: 2rem;
-    opacity: 0; /* Inicialmente oculto */
+    opacity: 0; 
     margin-right: 30px;
     transition: opacity 0.5s ease-in-out, transform 0.7s ease-in-out; /* Transiciones de opacidad y transformación */
   }
   .dice6 {
     color: white;
     font-size: 2rem;
-    opacity: 0; /* Inicialmente oculto */
+    opacity: 0;
     margin-right: 30px;
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Transiciones de opacidad y transformación */
   }
   
+  .resetLife{
+    color: white;
+    font-size: 2rem;
+    margin-left: 30px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Transiciones de opacidad y transformación */
+  }
+  .resetLife20{
+    color: white;
+    position: absolute;
+    font-size: 2rem;
+    margin-left: 1.6rem;
+    top: 40px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Transiciones de opacidad y transformación */
+  }
+  .resetLife40{
+    color: white;
+    position: absolute;
+    font-size: 2rem;
+    margin-left: -2.5rem;
+    bottom: 40px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Transiciones de opacidad y transformación */
+  }
   .playersAmount{
     color: white;
     font-size: 2rem;
     margin-left: 30px;
-    opacity: 0; /* Inicialmente oculto */
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Transiciones de opacidad y transformación */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.7s ease-in-out; /* Transiciones de opacidad y transformación */
   }
 }

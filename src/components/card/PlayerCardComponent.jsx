@@ -1,12 +1,18 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import AditionalCountersComponent from '../aditionalCounters/AditionalCountersComponent';
 
-function PlayerCardComponent({playerName, playerColor, playerClass, playerImg}) {
+function PlayerCardComponent({playerName, playerColor, playerClass, playerImg, playersLife}) {
   const [rotationAngle, setRotationAngle] = useState(0);
-  const [count, setcount] = useState(40)
+  const [count, setcount] = useState(playersLife)
   const [poison, setPoison] = useState(0)
   const [dead, setDead] = useState(false)
   const [showPoison, setShowPoison] = useState(false)
+  
+
+  useEffect(() => {
+setcount(playersLife)
+
+  }, [playersLife])
   
 
   const handlePoisonAdd = ()=>{
@@ -27,7 +33,6 @@ function PlayerCardComponent({playerName, playerColor, playerClass, playerImg}) 
       setDead(false)
     }
   }
-
 
   const rotateImage = () => {
     setRotationAngle(rotationAngle + 90);
@@ -64,8 +69,7 @@ function PlayerCardComponent({playerName, playerColor, playerClass, playerImg}) 
       }
         <div className='playersBox-aditional'>
           <div>
-        <AditionalCountersComponent
-          showPoison = {showPoison} handlePoisonAdd={handlePoisonAdd} poison={poison} setShowPoison={setShowPoison} handlePoisonRest={handlePoisonRest}/>
+        <AditionalCountersComponent showPoison = {showPoison} handlePoisonAdd={handlePoisonAdd} poison={poison} setShowPoison={setShowPoison} handlePoisonRest={handlePoisonRest}/>
           </div>
         </div>
     </div>
