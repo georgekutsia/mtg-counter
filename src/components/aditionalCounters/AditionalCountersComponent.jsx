@@ -7,7 +7,6 @@ function AditionalCountersComponent({showPoison, handlePoisonAdd, poison, setSho
               {poison === 0 &&<i onClick={()=>setShowPoison(!showPoison)}  className="fa-solid fa-skull-crossbones"></i>}
               {showPoison && poison >=1 && <i  className="fa-solid fa">{poison}</i>}
               {showPoison && <i onClick={handlePoisonRest}  className="fa-solid fa-minus"><span></span></i>}
-    
     </div>
   )
 }

@@ -2,12 +2,14 @@
   @include background-gradientGreen;
   transition: 0.3s ease-in-out;
   margin:0px;
-  height: 50vh;
+  height: 100vw;
+  width: 100vw;
   padding: 5px;
+  border-radius: 20px;
   &-name{
     margin: 0px;
     &-img{
-      width: 25vw;
+      width: 20vw;
       border-radius: 10px;
     }
     &-rotate{
@@ -38,7 +40,7 @@
         transition: 1s ease-in-out;
       }
       i:hover {
-        opacity: 0.6;
+        opacity: 0.8;
         transition: none;
       }
     }
@@ -66,8 +68,6 @@
 
 
 
-
-
 .playersBox-aditional{
   &-poison{
     display: flex;
@@ -86,4 +86,14 @@
   align-items: center;
   color: red;
   font-size: 10rem;
+}
+
+.players-box{
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+justify-content: space-between;
+background-color: black;
+height: 100vh;
+padding: 5px 2px;
 }

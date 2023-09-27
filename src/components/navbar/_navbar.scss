@@ -1,0 +1,40 @@
+.navbarBox {
+  position: absolute;
+  display: flex;
+  background-color: blue;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  align-items: center;
+  justify-content: center; 
+  margin: auto;
+  .fa-hands-asl-interpreting {
+    color: white;
+    font-size: 2rem;
+  }
+  .dice20 {
+    color: white;
+    font-size: 2rem;
+    opacity: 0; /* Inicialmente oculto */
+    margin-right: 30px;
+    transition: opacity 0.5s ease-in-out, transform 0.7s ease-in-out; /* Transiciones de opacidad y transformación */
+  }
+  .dice6 {
+    color: white;
+    font-size: 2rem;
+    opacity: 0; /* Inicialmente oculto */
+    margin-right: 30px;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Transiciones de opacidad y transformación */
+  }
+  
+  .playersAmount{
+    color: white;
+    font-size: 2rem;
+    margin-left: 30px;
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Transiciones de opacidad y transformación */
+  }
+}
