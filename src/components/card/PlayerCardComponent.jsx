@@ -7,12 +7,12 @@ function PlayerCardComponent({ playerName, playerColor, playerClass, playerImg, 
 
   const [rotationAngle, setRotationAngle] = useState(0);
   const [count, setcount] = useState(0);
-  const [countColor, setcountColor] = useState('white');
+  const [countColor, setCountColor] = useState('white');
   const [poison, setPoison] = useState(0);
   const [dead, setDead] = useState(false);
   const [showPoison, setShowPoison] = useState(false);
   const [temporalCount, setTemporalCount] = useState(0);
-  const [resetTimer, setResetTimer] = useState(null); // Nuevo estado para el temporizador
+  const [resetTimer, setResetTimer] = useState(null); 
 
   useEffect(() => {
     setcount(playerLife);
@@ -38,27 +38,19 @@ function PlayerCardComponent({ playerName, playerColor, playerClass, playerImg, 
     }
   };
 
-  const handleOperate = (counter) => {
+  const handleOperate = (counter, color) => {
     setcount(count + counter);
     setTemporalCount(temporalCount + counter);
-    if (counter > 0 ) {
-      setcountColor('lightgreen');
-    } else if (counter < 0 ) {
-      setcountColor('tomato');
-    }
-    
-    // Limpiar el temporizador existente si hay uno
+    setCountColor(color);
+
     if (resetTimer) {
       clearTimeout(resetTimer);
     }
-
-    // Configurar un nuevo temporizador para restablecer el contador después de 2 segundos de inactividad
     const timer = setTimeout(() => {
       setTemporalCount(0);
-      setcountColor('white');
+      setCountColor('white');
     }, 2000);
 
-    // Guardar el identificador del temporizador en el estado
     setResetTimer(timer);
   };
 
@@ -78,8 +70,8 @@ function PlayerCardComponent({ playerName, playerColor, playerClass, playerImg, 
       {!dead &&
         <div className='playersBox-counter'>
           <div className='playersBox-counter-add'>
-            <i onClick={() => handleOperate(1)} className="fa-solid fa-plus"><span> 1</span></i>
-            <i onClick={() => handleOperate(5)} className="fa-solid fa-plus"><span> 5</span></i>
+            <i onClick={() => handleOperate(1, "lightgreen")} className="fa-solid fa-plus"><span> 1</span></i>
+            <i onClick={() => handleOperate(5, "lightgreen")} className="fa-solid fa-plus"><span> 5</span></i>
           </div>
           <div className='playersBox-counter-center'>
             <p>{count}</p>
@@ -88,8 +80,8 @@ function PlayerCardComponent({ playerName, playerColor, playerClass, playerImg, 
             <div style={{ color: countColor }}>{temporalCount}</div>
           </div>
           <div className='playersBox-counter-add'>
-            <i onClick={() => handleOperate(-1)} className="fa-solid fa-minus"><span> 1</span></i>
-            <i onClick={() => handleOperate(-5)} className="fa-solid fa-minus"><span> 5</span></i>
+            <i onClick={() => handleOperate(-1, "tomato")} className="fa-solid fa-minus"><span> 1</span></i>
+            <i onClick={() => handleOperate(-5, "tomato")} className="fa-solid fa-minus"><span> 5</span></i>
           </div>
         </div>
       }
