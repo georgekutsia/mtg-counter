@@ -60,9 +60,9 @@ function PlayerCardComponent({ playerName, playerColor, playerClass, playerImg, 
       <div className='playersBox-name'>
         <img className='playersBox-name-img' src={playerImg} alt="Player" />
         <h1 className='playersBox-name-title'>{playerName}</h1>
-        <div className='playersBox-name-rotate'>
+        {/* <div className='playersBox-name-rotate'>
           <i onClick={rotateImage} className="fa-solid fa-rotate-right"></i>
-        </div>
+        </div> */}
       </div>
       {!dead &&
         <div className='playersBox-counter'>
