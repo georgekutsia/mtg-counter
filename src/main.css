@@ -72,6 +72,9 @@ a {
   margin: -80px 0px;
   z-index: -2;
 }
+.playersBox-counter-center h4 {
+  position: absolute;
+}
 
 .boxRed {
   background-image: radial-gradient(circle at center, black, black, black, black, rgb(255, 0, 0));

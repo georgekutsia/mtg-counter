@@ -11,7 +11,7 @@ function PlayerCardComponent({ playerName, playerColor, playerClass, playerImg, 
   const [poison, setPoison] = useState(0);
   const [dead, setDead] = useState(false);
   const [showPoison, setShowPoison] = useState(false);
-  const [temporalCount, setTemporalCount] = useState(0);
+  const [temporalCount, setTemporalCount] = useState(null);
   const [resetTimer, setResetTimer] = useState(null); 
 
   useEffect(() => {
@@ -47,7 +47,7 @@ function PlayerCardComponent({ playerName, playerColor, playerClass, playerImg, 
       clearTimeout(resetTimer);
     }
     const timer = setTimeout(() => {
-      setTemporalCount(0);
+      setTemporalCount(null);
       setCountColor('white');
     }, 2000);
 
@@ -75,9 +75,7 @@ function PlayerCardComponent({ playerName, playerColor, playerClass, playerImg, 
           </div>
           <div className='playersBox-counter-center'>
             <p>{count}</p>
-          </div>
-          <div>
-            <div style={{ color: countColor }}>{temporalCount}</div>
+            <h4 style={{ color: countColor }}>{temporalCount}</h4>
           </div>
           <div className='playersBox-counter-add'>
             <i onClick={() => handleOperate(-1, "tomato")} className="fa-solid fa-minus"><span> 1</span></i>
