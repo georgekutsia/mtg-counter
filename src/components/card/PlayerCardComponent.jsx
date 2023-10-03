@@ -64,29 +64,31 @@ function PlayerCardComponent({ playerName, playerColor, playerClass, playerImg, 
           <i onClick={rotateImage} className="fa-solid fa-rotate-right"></i>
         </div> */}
       </div>
-      {!dead &&
         <div className='playersBox-counter'>
-          <div className='playersBox-counter-add'>
+      {!dead &&
+          <div className='playersBox-counter-add' >
             <i onClick={() => handleOperate(1, "lightgreen")} className="fa-solid fa-plus"><span> 1</span></i>
             <i onClick={() => handleOperate(5, "lightgreen")} className="fa-solid fa-plus"><span> 5</span></i>
           </div>
+      }
+          {(count <= 0 || dead ) &&  <div>   <i className="fa-solid fa-face-dizzy player-dead"></i> </div>}
+            {count > 0   &&  
+            <>
+      {!dead &&
+      <>
           <div className='playersBox-counter-center'>
-           
-            {count !== 0 &&   <p>{count}</p> }
-            {count === 0 &&  <i className="fa-solid fa-skull"></i> }
+             <p>{count}</p> 
             <h4 style={{ color: countColor }}>{temporalCount}</h4>
           </div>
           <div className='playersBox-counter-add' >
             <i onClick={() => handleOperate(-1, "tomato")} className="fa-solid fa-minus"  ><span> 1</span></i>
             <i onClick={() => handleOperate(-5, "tomato")} className="fa-solid fa-minus"><span> 5</span></i>
           </div>
+          </>
+          }
+            </>
+            }
         </div>
-      }
-      {dead &&
-        <div>
-          <i className="fa-solid fa-face-dizzy player-dead"></i>
-        </div>
-      }
       <div className='playersBox-aditional'>
         <div>
           <AditionalCountersComponent showPoison={showPoison} handlePoisonAdd={handlePoisonAdd} poison={poison} setShowPoison={setShowPoison} handlePoisonRest={handlePoisonRest} />
