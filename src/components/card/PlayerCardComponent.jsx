@@ -42,7 +42,6 @@ function PlayerCardComponent({ playerName, playerColor, playerClass, playerImg, 
     setcount(count + counter);
     setTemporalCount(temporalCount + counter);
     setCountColor(color);
-
     if (resetTimer) {
       clearTimeout(resetTimer);
     }
@@ -50,10 +49,8 @@ function PlayerCardComponent({ playerName, playerColor, playerClass, playerImg, 
       setTemporalCount(null);
       setCountColor('white');
     }, 2000);
-
     setResetTimer(timer);
   };
-
   const rotateImage = () => {
     setRotationAngle(rotationAngle + 90);
   };
@@ -74,11 +71,13 @@ function PlayerCardComponent({ playerName, playerColor, playerClass, playerImg, 
             <i onClick={() => handleOperate(5, "lightgreen")} className="fa-solid fa-plus"><span> 5</span></i>
           </div>
           <div className='playersBox-counter-center'>
-            <p>{count}</p>
+           
+            {count !== 0 &&   <p>{count}</p> }
+            {count === 0 &&  <i className="fa-solid fa-skull"></i> }
             <h4 style={{ color: countColor }}>{temporalCount}</h4>
           </div>
-          <div className='playersBox-counter-add'>
-            <i onClick={() => handleOperate(-1, "tomato")} className="fa-solid fa-minus"><span> 1</span></i>
+          <div className='playersBox-counter-add' >
+            <i onClick={() => handleOperate(-1, "tomato")} className="fa-solid fa-minus"  ><span> 1</span></i>
             <i onClick={() => handleOperate(-5, "tomato")} className="fa-solid fa-minus"><span> 5</span></i>
           </div>
         </div>
