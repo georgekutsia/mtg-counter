@@ -56,13 +56,14 @@ function PlayerCardComponent({ playerName, playerColor, playerClass, playerImg, 
   };
 
   return (
-    <div className={`playersBox ${playerClass}`} style={{ transform: `rotate(${rotationAngle}deg)` }}>
-      <div className='playersBox-name'>
+    <div className={`playersBox ${playerClass}`} >
+    <div style={{ transform: `rotate(${rotationAngle}deg)`, transition: "transform 0.3s ease-in-out"  }}>
+      <div className='playersBox-name' >
+        <div className='playersBox-name-rotate'>
+          <i onClick={rotateImage} className="fa-solid fa-rotate-right"></i>
+        </div>
         <img className='playersBox-name-img' src={playerImg} alt="Player" />
         <h1 className='playersBox-name-title'>{playerName}</h1>
-        {/* <div className='playersBox-name-rotate'>
-          <i onClick={rotateImage} className="fa-solid fa-rotate-right"></i>
-        </div> */}
       </div>
         <div className='playersBox-counter'>
       {!dead &&
@@ -94,6 +95,7 @@ function PlayerCardComponent({ playerName, playerColor, playerClass, playerImg, 
           <AditionalCountersComponent showPoison={showPoison} handlePoisonAdd={handlePoisonAdd} poison={poison} setShowPoison={setShowPoison} handlePoisonRest={handlePoisonRest} />
         </div>
       </div>
+    </div>
     </div>
   );
 }
