@@ -13,15 +13,17 @@ function NavbarCenterComponent() {
   };
 
 
-const toggleResetLifeBack = (startNumber) => {
-  setPlayerLife(startNumber)
-  setTimeout(() => {
+  const toggleResetLifeBack = async (startNumber) => {
+    setPlayerLife(2);
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    setPlayerLife(startNumber);
+    await new Promise((resolve) => setTimeout(resolve, 200));
     setShowResetLife(false);
-  }, 200);
-  setTimeout(() => {
-    setShowNav(false)
-  }, 400);
-}
+    await new Promise((resolve) => setTimeout(resolve, 200));
+  
+    setShowNav(false);
+  };
+  
 
   const toggleResetLife = () => {
     setShowResetLife(!showResetLife)
@@ -32,7 +34,6 @@ const toggleResetLifeBack = (startNumber) => {
         <i className="fa-solid fa-dice-d6 dice6" style={{ opacity: showNav ? 1 : 0, transform: showNav ? 'translateX(0)' : 'translateX(-120px)' }}></i>
         
         <i className="fa-solid fa-hands-asl-interpreting" onClick={toggleMenu} ></i>
-        
             <div>
                 <i className="fa-solid  fa-2 resetLife20"  onClick={()=>toggleResetLifeBack(20)}   style={{ opacity: showResetLife ? 1 : 0, transform: showResetLife ? 'translateX(0)' : 'translateY(-50px)' }}>0</i> 
                 <i className="fa-solid  fa-heart-pulse resetLife" onClick={toggleResetLife}  style={{ opacity: showNav ? 1 : 0, transform: showNav ? 'translateX(0)' : 'translateX(120px)' }}></i> 

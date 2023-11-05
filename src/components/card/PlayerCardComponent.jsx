@@ -39,7 +39,7 @@ function PlayerCardComponent({ playerName, playerColor, playerClass, playerImg, 
   };
 
   const handleOperate = (counter, color) => {
-    setcount(count + counter);
+    setcount((prevCount) => prevCount + counter);
     setTemporalCount(temporalCount + counter);
     setCountColor(color);
     if (resetTimer) {
@@ -57,8 +57,8 @@ function PlayerCardComponent({ playerName, playerColor, playerClass, playerImg, 
 
   return (
     <div className={`playersBox ${playerClass}`} >
-    <div style={{ transform: `rotate(${rotationAngle}deg)`, transition: "transform 0.3s ease-in-out"  }}>
-      <div className='playersBox-name' >
+    <div className='' style={{ transform: `rotate(${rotationAngle}deg)`, transition: "transform 0.3s ease-in-out" }}>
+      <div className='playersBox-name'>
         <div className='playersBox-name-rotate'>
           <i onClick={rotateImage} className="fa-solid fa-rotate-right"></i>
         </div>
