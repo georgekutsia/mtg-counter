@@ -5,11 +5,10 @@ export const GlobalData = React.createContext();
 
 function App() {
   const [playerLife, setPlayerLife] = useState(40);
-  
 
   return (
     <GlobalData.Provider value={{playerLife, setPlayerLife}}>
-      <div className="app">
+      <div className="app" >
         <PlayersComponent />
         <NavbarCenterComponent />
       </div>

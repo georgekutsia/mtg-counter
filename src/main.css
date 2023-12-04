@@ -2,6 +2,7 @@
 body {
   font-family: var(--font-family);
   background-color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
 }
 
 * {
@@ -15,6 +16,11 @@ li {
 
 a {
   text-decoration: none;
+}
+
+.app {
+  max-width: 800px;
+  margin: auto;
 }
 
 .playersBox {
@@ -35,6 +41,14 @@ a {
   width: 20vw;
   max-width: 100px;
   border-radius: 10px;
+  z-index: 90;
+}
+.playersBox-name-crown {
+  width: 20vw;
+  height: 40px;
+  position: absolute;
+  top: -25px;
+  margin: auto;
 }
 .playersBox-name-rotate {
   position: absolute;
@@ -117,7 +131,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: red;
   font-size: 7rem;
 }
 
@@ -134,7 +147,6 @@ a {
 @media screen and (min-width: 765px) {
   .playersBox-counter {
     margin-top: -20vh;
-    background-color: red;
   }
 }
 .navbarBox {

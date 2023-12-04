@@ -13,6 +13,14 @@
       width: 20vw;  
       max-width: 100px;
       border-radius: 10px;
+      z-index: 90;
+    }
+    &-crown{
+      width: 20vw;
+      height: 40px;
+      position: absolute;
+      top: -25px;
+      margin: auto;
     }
     &-rotate {
       position: absolute;
@@ -99,7 +107,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: red;
   font-size: 7rem;
 }
 
@@ -116,6 +123,5 @@ overflow: hidden;
 @media screen and (min-width: 765px) {
 .playersBox-counter{
   margin-top: -20vh;
-  background-color: red;
 }
 }
